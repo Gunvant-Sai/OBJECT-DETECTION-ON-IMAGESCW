@@ -11,7 +11,6 @@ function setup()
     video.size(380,380);
     video.hide();
 
-    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML = "Status: Detecting Objects";
 }
 
@@ -39,6 +38,7 @@ function preload()
 function draw()
 {
     image(video,0,0,380,380);
+    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     objectDetector.detect(video,gotresult);
     if(status_ != "")
     {
