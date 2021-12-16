@@ -19,7 +19,6 @@ function modelLoaded()
 {
     console.log("model loaded");
     status_=true;
-    objectDetector.detect(video,gotresult);
 }
 
 function gotresult(error,result)
@@ -40,6 +39,7 @@ function preload()
 function draw()
 {
     image(video,0,0,380,380);
+    objectDetector.detect(video,gotresult);
     if(status_ != "")
     {
       for(i= 0; i < object.length; i++)
